@@ -1,0 +1,152 @@
+/* Resets básicos y Variables */
+// 1. Define your base color as a Sass variable. This allows you to use it with Sass functions.
+$primary-color-base: #007bff;
+
+// 2. Use :host for component-level styles. Create CSS Custom Properties from your Sass variables.
+//    This is the best practice for combining Sass's power with CSS's runtime flexibility.
+:host {
+  --primary-color: #{$primary-color-base};
+  --primary-color-dark: #{darken($primary-color-base, 10%)}; // Pre-calculate the darkened color
+  --secondary-color: #6c757d;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  --light-gray: #e9ecef;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Encabezado y Navegación */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 2rem;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: var(--light-gray);
+}
+
+/* Sección Hero (Principal) */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x800/28a745/FFFFFF?text=Tu+Imagen+Fondo') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* Ajusta según sea necesario */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.call-to-action {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action:hover {
+  // 3. Now, you can use the pre-calculated CSS variable at runtime.
+  background-color: var(--primary-color-dark);
+}
+
+/* Estilo General de Secciones */
+main section {
+  padding: 4rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main section:nth-child(even) {
+  background-color: var(--light-gray);
+}
+
+main section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+/* Cuadrícula de Portafolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Pie de página */
+.footer {
+  background-color: var(--text-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
