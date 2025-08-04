@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
   template: `
     <header class="header">
       <nav class="navbar">
@@ -31,14 +31,25 @@ import { RouterOutlet } from '@angular/router';
         <h2>Sobre Mí</h2>
         <p>Aquí puedes escribir una breve biografía sobre ti, tus habilidades, tus pasiones, etc.</p>
         <p>Por ejemplo: "Soy un desarrollador apasionado por crear experiencias web intuitivas y visualmente atractivas. Con experiencia en Angular, TypeScript y SCSS, me encanta transformar ideas en soluciones funcionales."</p>
+        
       </section>
 
       <section id="portfolio" class="portfolio-section">
         <h2>Portafolio</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">Proyecto 1</div>
-          <div class="portfolio-item">Proyecto 2</div>
-          <div class="portfolio-item">Proyecto 3</div>
+        <p>Estos son algunos de los proyectos en los que he trabajado.</p>
+        <div class="waterfall-gallery">
+          <!-- Asegúrate de que estas imágenes estén en tu carpeta src/assets -->
+          <img src="imagen-1.jpeg" alt="Descripción del Proyecto 1">       
+          <img src="imagen-2.jpeg" alt="Descripción del Proyecto 2">
+          <img src="imagen-3.jpeg" alt="Descripción del Proyecto 3">
+          <img src="imagen-4.jpeg" alt="Descripción del Proyecto 4">
+          <img src="imagen-5.jpeg" alt="Descripción del Proyecto 5">
+          <img src="imagen-6.jpeg" alt="Descripción del Proyecto 6">
+          <img src="imagen-7.jpeg" alt="Descripción del Proyecto 7">
+          <img src="imagen-8.jpeg" alt="Descripción del Proyecto 8">
+          <img src="imagen-9.jpeg" alt="Descripción del Proyecto 9">
+          
+          <!-- Agrega más imágenes según sea necesario -->
         </div>
       </section>
 
